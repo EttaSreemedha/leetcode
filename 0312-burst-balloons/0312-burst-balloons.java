@@ -4,12 +4,9 @@ class Solution {
         int[] balloons = new int[n + 2];
         balloons[0] = 1;
         balloons[n + 1] = 1;
-
         for (int i = 0; i < n; i++) {
             balloons[i + 1] = nums[i];
         }
-
-       
         int[][] dp = new int[n + 2][n + 2];
         for (int[] row : dp) {
             Arrays.fill(row, -1);
@@ -17,7 +14,6 @@ class Solution {
 
         return burst(balloons, 1, n, dp);
     }
-
     private int burst(int[] a, int i, int j, int[][] dp) {
         if (i > j) return 0;
         if (dp[i][j] != -1) return dp[i][j];
@@ -32,6 +28,6 @@ class Solution {
             maxi = Math.max(maxi, coins);
         }
 
-        return dp[i][j] = maxi;
+        return  dp[i][j]=maxi;
     }
 }
